@@ -1,0 +1,83 @@
+* {
+  min-height: 0;
+  font-family: "SF Pro Display", "JetBrainsMono Nerd Font";
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Rende il contenitore esterno invisibile */
+window#waybar {
+  background-color: transparent;
+}
+
+/* IL CUORE DELLA BARRA: 
+   Manteniamo lo sfondo a 0.5 di opacità come nel tuo file originale 
+   per permettere al blur di Hyprland di agire correttamente.
+*/
+#waybar > box {
+  background-color: rgba(0, 0, 0, 0.5); 
+  border-radius: 20px; 
+  border: 1px solid rgba(255, 255, 255, 0.1); 
+  padding: 2px 10px;
+  /* Rimuoviamo margini interni per non rompere la forma */
+  margin: 0px; 
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+/* --- WORKSPACES --- */
+#workspaces {
+  background: rgba(255, 255, 255, 0.1); 
+  margin: 4px 4px;
+  padding: 0px 5px;
+  border-radius: 15px;
+}
+
+#workspaces button {
+  padding: 0px 8px;
+  margin: 3px 2px;
+  border-radius: 12px;
+  color: #bbb;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+#workspaces button.active {
+  color: #000;
+  background: #fff;
+  min-width: 40px;
+}
+
+/* --- MODULI (Manteniamo lo stile pulito) --- */
+#custom-notification,
+#custom-bluetooth,
+#custom-weather,
+#network,
+#custom-updates,
+#clock,
+#pulseaudio,
+#battery,
+#tray,
+#mpris {
+  padding: 0px 10px;
+  margin: 4px 2px;
+  color: #e5e5e5;
+  border-radius: 10px;
+  /* Usiamo lo sfondo originale che avevi nei moduli */
+  background-color: rgba(0, 0, 0, 0.2); 
+}
+
+#clock {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+#pulseaudio.muted {
+  color: #ff5b45;
+}
+
+#network.disconnected {
+  color: #ff5b45; /* Rosso come il mute del volume */
+}

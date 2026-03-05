@@ -1,0 +1,128 @@
+{
+  "layer": "top",
+  "position": "top",
+  "margin-top": 8,      // Distanza dal bordo superiore dello schermo
+  "margin-left": 15,     // Distanza dal lato sinistro
+  "margin-right": 15,    // Distanza dal lato destro
+  "height": 34,          // Definisci un'altezza per aiutare la stondatura
+  "spacing": 0,
+  "exclusive": true,
+  "gtk-layer-shell": true,
+  "passthrough": false,
+  "fixed-center": true,
+  "modules-left": ["hyprland/workspaces", "custom/updates"],
+  "modules-center": ["mpris", "clock", "custom/notification"],
+  "modules-right": [
+    "custom/bluetooth",
+    "pulseaudio#volume",
+    "pulseaudio#microphone",
+    "tray",
+    "custom/weather",
+    "network",
+    "battery",
+  ],
+  "tray": {
+    "show-passive-items": true,
+    "spacing": 8,
+  },
+  "hyprland/workspaces": {
+    "persistent-workspaces": {
+      "DP-1": [1, 2, 3, 4],
+      "HDMI-A-1": [5, 6],
+    },
+  },
+  "clock": {
+    "format": "{:%I:%M %p}",
+    "format-alt": "{:%a %b %d}",
+    "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+  },
+  "mpris": {
+    "format": "{player_icon} {artist} - {title}",
+    "format-paused": "{status_icon} {artist} - {title}",
+    "player-icons": {
+      "default": "  ",
+    },
+    "status-icons": {
+      "paused": "  ",
+    },
+    // "ignored-players": ["firefox"]
+  },
+  "pulseaudio#volume": {
+    "format": "", // Vuoto quando attivo
+    "format-bluetooth": "",
+    "format-muted": "<span color='#ff5555'> </span>", 
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "tooltip": false
+  },
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": "", // Rimane invisibile quando attivo
+    "format-source-muted": "<span color='#ff5555'>󰍭</span>", // Rosso come il volume
+    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "tooltip": false
+  },
+  "network": {
+        "interface": "wlan0",
+        "format-wifi": "    {essid}",
+        "format-ethernet": "󰈀    {ifname}",
+        "format-linked": "󰈀    {ifname} (No IP)",
+        "format-disconnected": "󰖪    Disconnected",
+        "tooltip-format-wifi": "Signal Strength: {signalStrength}%",
+        "on-click": "alacritty -e nmtui" // Lancia nmtui su Alacritty
+  },
+  "custom/notification": {
+    "tooltip": true,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+  "custom/bluetooth": {
+    "format": " {}",
+    "exec": "~/.config/waybar/scripts/bluetooth.sh",
+    "interval": 5,
+    "tooltip": false,
+    "on-click": "blueman-manager",
+  },
+  "custom/weather": {
+    "format": "{}",
+    "exec": "~/.config/waybar/scripts/weather.sh",
+    "interval": 900,
+    "tooltip": false,
+  },
+  "custom/updates": {
+    "format": "{}",
+    "exec": "~/.config/waybar/scripts/updates.sh",
+    "return-type": "json",
+    "interval": 600,
+    "tooltip": true,
+    "on-click": "alacritty -e yay ; pkill -RTMIN+8 waybar",
+    "signal": 8,
+  },
+  "battery": {
+    "states": {
+        "good": 95,
+        "warning": 30,
+        "critical": 15
+    },
+    "format": "{icon} <b>{capacity}</b>%",
+    "format-charging": "󱐋   <b>{capacity}</b>%",
+    "format-plugged": "   <b>{capacity}</b>%",
+    "format-alt": "{icon} {time}",
+    // Icone Nerd Font più corpose (tipo "Battery Bold")
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+},
+}
