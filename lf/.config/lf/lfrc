@@ -1,0 +1,16 @@
+set hidden true
+set icons true
+
+# custom functions
+cmd open_editor ${{
+    $EDITOR "$f"
+}}
+
+# basic functions
+map <enter> open_editor
+map . set hidden!
+map y copy
+map p paste
+map x cut
+map C clear
+
