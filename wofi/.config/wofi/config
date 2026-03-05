@@ -1,0 +1,8 @@
+width=400
+height=300
+location=center
+show=drun
+allow_images=true
+image_size=24
+# Questo nasconde la scritta brutta del prompt se vuoi un look minimale
+print_command=true

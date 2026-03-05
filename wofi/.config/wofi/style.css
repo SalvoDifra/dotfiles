@@ -1,0 +1,63 @@
+* {
+    font-family: "SF Pro Display", sans-serif;
+    /* Toglie il bordo blu di selezione su tutti gli elementi */
+    outline: none;
+    border: none;
+}
+
+window {
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 0.8); /* Nero trasparente per il blur */
+    border: 1px solid rgba(255, 255, 255, 0.6); /* Bordino sottile quasi invisibile */
+    border-radius: 15px;
+}
+
+#outer-box {
+    margin: 15px;
+}
+
+#input {
+    margin-bottom: 15px;
+    padding: 12px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.05); /* Sfondo ricerca leggerissimo */
+    border-radius: 10px;
+    /* Forza la rimozione di ogni bordo o outline */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+}
+
+#input:focus {
+    /* Assicura che anche quando clicchi non appaia il blu */
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#inner-box {
+    background-color: transparent;
+}
+
+#entry {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+/* Icone delle applicazioni */
+#img {
+    margin-right: 15px;
+}
+
+#text {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Selezione: Bianco pieno, testo nero */
+#entry:selected {
+    background-color: rgba(240, 240, 240, 0.8);
+}
+
+#text:selected {
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: 600;
+}
