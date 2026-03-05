@@ -1,0 +1,35 @@
+window#osd {
+  padding: 15px;              /* Padding uniforme per centrare tutto */
+  min-width: 200px;           /* Larghezza equilibrata */
+  border: 1px solid rgba(255, 255, 255, 0.1);  /* Bordo Salvia */
+  border-radius: 16px;        /* Arrotondato ma non esagerato */
+  background: rgba(0, 0, 0, 0.5);        /* Stesso sfondo scuro di Waybar */
+}
+
+image, label {
+  color: #e5e5e5;             /* Testo Salvia */
+  font-size: 20px;
+}
+
+progressbar {
+  min-height: 8px;
+  border-radius: 999px;
+  background: transparent;
+  margin-top: 4px;            /* Ridotto per centrare la barra verticalmente */
+}
+
+trough {
+  min-height: inherit;
+  border-radius: inherit;
+  background: rgba(255, 255, 255, 0.5);        /* Colore grigio scuro neutro (come il vecchio trough) */
+}
+
+progress {
+  min-height: inherit;
+  border-radius: inherit;
+  background: #e5e5e5;      /* Colore Salvia pieno */
+}
+
+#container {
+  margin: 0px;                /* Rimosso per evitare spostamenti strani */
+}
