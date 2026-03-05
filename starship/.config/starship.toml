@@ -1,0 +1,59 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# --- CONFIGURAZIONE LAYOUT ---
+# Abbiamo aggiunto spazi manuali tra i moduli per la massima pulizia
+format = """$os $directory $git_branch$git_status$character"""
+
+add_newline = false
+
+[os]
+disabled = false
+#style = "bold white"
+style = "bold #3A86FF"
+
+[os.symbols]
+# Forziamo l'icona di Arch per entrambi, così non sbagliamo
+Arch = " "
+EndeavourOS = " "
+
+[directory]
+#style = "bold white"
+style = "bold #D8E2DC"
+# format con spazio finale per distanziarlo dal resto
+format = "[$path]($style)[$read_only]($read_only_style) "
+truncation_length = 3
+truncation_symbol = "…/"
+read_only = " 󰌾"
+
+[character]
+# Spazio prima della freccia per non incollarla al path
+success_symbol = "[󰁔](bold #D8E2DC)"
+error_symbol = "[󰁔](#FF5D5D)"
+
+[git_branch]
+symbol = " "
+style = "bold #957FB8" 
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "bold #957FB8"
+# Usiamo gli apici singoli per evitare l'errore di parsing sulle parentesi
+format = '([\[$all_status$ahead_behind\]]($style) )'
+
+# --- LINGUAGGI (Monocromatici) ---
+[python]
+symbol = " "
+style = "bold white"
+
+[rust]
+symbol = "󱘗 "
+style = "bold white"
+
+[nodejs]
+symbol = " "
+style = "bold white"
+
+[lua]
+symbol = " "
+style = "bold white"
+
