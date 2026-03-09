@@ -1,15 +1,16 @@
 * {
-    font-family: "SF Pro Display", sans-serif;
-    /* Toglie il bordo blu di selezione su tutti gli elementi */
+    /* Font presi dalla tua Waybar */
+    font-family: "SF Pro Display", "JetBrainsMono Nerd Font", sans-serif;
     outline: none;
     border: none;
 }
 
 window {
-    margin: 10px;
-    background-color: rgba(0, 0, 0, 0.8); /* Nero trasparente per il blur */
-    border: 1px solid rgba(255, 255, 255, 0.6); /* Bordino sottile quasi invisibile */
-    border-radius: 15px;
+    margin: 0px;
+    /* Sincronizzato con waybar > box */
+    background-color: rgba(0, 0, 0, 0.5); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: 20px; 
 }
 
 #outer-box {
@@ -17,20 +18,20 @@ window {
 }
 
 #input {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     padding: 12px;
-    color: white;
-    background-color: rgba(255, 255, 255, 0.05); /* Sfondo ricerca leggerissimo */
-    border-radius: 10px;
-    /* Forza la rimozione di ogni bordo o outline */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: none;
+    color: #ffffff;
+    /* Font ridotto per un look più raffinato */
+    font-size: 19px; 
+    font-weight: 600;
+    /* Stile simile ai tuoi moduli Waybar */
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 #input:focus {
-    /* Assicura che anche quando clicchi non appaia il blu */
-    outline: none;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 #inner-box {
@@ -38,26 +39,30 @@ window {
 }
 
 #entry {
-    padding: 10px;
+    padding: 8px 12px;
+    margin: 2px 0px;
     border-radius: 10px;
     background-color: transparent;
 }
 
-/* Icone delle applicazioni */
-#img {
-    margin-right: 15px;
+/* Selezione: Bianco pieno come il tuo workspace attivo */
+#entry:selected {
+    background-color: #ffffff;
 }
 
 #text {
-    color: rgba(255, 255, 255, 0.9);
-}
-
-/* Selezione: Bianco pieno, testo nero */
-#entry:selected {
-    background-color: rgba(240, 240, 240, 0.8);
+    color: #e5e5e5;
+    /* Dimensione scritte app più equilibrata */
+    font-size: 16px;
+    font-weight: 500;
 }
 
 #text:selected {
-    color: rgba(0, 0, 0, 0.8);
+    color: #000000;
     font-weight: 600;
+}
+
+#img {
+    margin-right: 15px;
+    /* Adattiamo l'icona alla nuova dimensione del font */
 }

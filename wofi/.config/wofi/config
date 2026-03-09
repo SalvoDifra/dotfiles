@@ -1,8 +1,10 @@
-width=400
-height=300
+width=650
+height=450
 location=center
 show=drun
+prompt=Search...
+filter_rate=100
 allow_images=true
-image_size=24
-# Questo nasconde la scritta brutta del prompt se vuoi un look minimale
-print_command=true
+image_size=32
+hide_scroll=true
+insensitive=true
