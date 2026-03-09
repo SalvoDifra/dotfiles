@@ -119,8 +119,8 @@
         "critical": 15
     },
     "format": "{icon} <b>{capacity}</b>%",
-    "format-charging": "󱐋   <b>{capacity}</b>%",
-    "format-plugged": "   <b>{capacity}</b>%",
+    "format-charging": "󱐋 <b>{capacity}</b>%",
+    "format-plugged": " <b>{capacity}</b>%",
     "format-alt": "{icon} {time}",
     // Icone Nerd Font più corpose (tipo "Battery Bold")
     "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
